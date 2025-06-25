@@ -1,0 +1,24 @@
+# Node modules
+node_modules/
+
+# Build output
+_output/
+_dist/
+_site/
+_site-dev/
+public/
+docs/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# dotenv files (if you use them)
+.env
+.env.*
+
+# VSCode settings (optional)
+.vscode/
