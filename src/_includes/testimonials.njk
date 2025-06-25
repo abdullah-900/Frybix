@@ -1,0 +1,95 @@
+<section class="section-spacing tests-section">
+<div class="testimonials flex flex-col flex-center gap-15">
+        {% set data = {
+  heading: "What our happy client say",
+  subheading: "Things  that make it the best place to start trading"
+} %}
+{% include "headingandsub.njk" %}
+<div class="carousel">
+    {% set data = {
+name: "Robin Ayala Doe",
+alt: "robin image",
+img: "robin.png",
+class: "first-slide",
+testimonial: "Why truly, I’ve found the JOY of cooking. It’s the point at which my better half does it. There is no sincerer love than the adoration for sustenance."
+} %}
+{% include "testimonial.njk" %}
+{% set data = {
+name: "John De marli",
+alt: "john image",
+img: "john.png",
+class: "second-slide",
+testimonial: "any individuals have eaten in this kitchen and have proceeded to lead typical, solid lives. The route to a man’s heart is through his stomach."
+} %}
+{% include "testimonial.njk" %}
+{% set data = {
+name: "Rowhan Smith",
+alt: "rowhan image",
+img: "rowhan.png",
+class: "third-slide",
+testimonial: "You don’t need to cook extravagant or muddled perfect works of art, simply great sustenance from new fixings."
+} %}
+{% include "testimonial.njk" %}
+</div>
+
+
+<div class="flex carousel-buttons gap-4">
+<button onclick="moveSlide(-1)" class="previous-btn">
+    <svg width="10" height="18" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path id="previous-btn-arrow" d="M8.5 1.58838L1.48529 8.99279L8.5 16.3972" stroke="#BBBBBB" stroke-width="2"/>
+</svg>
+
+</button>
+<button onclick="moveSlide(1)" class="next-btn">
+    <svg width="10" height="18" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path id="next-btn-arrow" d="M1.5 1.58838L8.51471 8.99279L1.5 16.3972" stroke="white" stroke-width="2"/>
+</svg>
+
+</button>
+</div>
+</div>
+</section>
+<script>
+    document.querySelector('.carousel').addEventListener('wheel', function(e) {
+    e.preventDefault();
+    window.scrollBy(0, e.deltaY);
+});
+       let currentSlide = 0;
+       const slides = document.querySelectorAll('.testmonial');
+        const prevButton=document.querySelector(".previous-btn")
+        const nextButton=document.querySelector(".next-btn")
+
+function moveSlide(direction) {
+    const newSlide = currentSlide + direction;
+if(newSlide >= 0 && newSlide < slides.length) {
+    currentSlide=newSlide
+    slides[currentSlide].scrollIntoView({ 
+    behavior: 'smooth',
+    block: 'nearest',
+    inline: 'center'
+  });
+changeButtonsState();
+}
+}
+        function changeButtonsState() {
+            if (currentSlide===0) {
+                prevButton.disabled = true;
+                prevButton.style.backgroundColor='white';
+                prevButton.children[0].children[0].setAttribute('stroke', '#BBBBBB')
+                nextButton.disabled = false;
+                nextButton.style.backgroundColor='#6D33FA';
+                nextButton.children[0].children[0].setAttribute('stroke', 'white')
+            }else if (currentSlide > 0 && currentSlide<slides.length-1) {
+                prevButton.disabled = false;
+                prevButton.style.backgroundColor='#6D33FA';
+                prevButton.children[0].children[0].setAttribute('stroke', 'white')
+            }
+            else if (currentSlide===slides.length-1) {
+                nextButton.disabled = true;
+                nextButton.style.backgroundColor='white';
+                nextButton.children[0].children[0].setAttribute('stroke', '#BBBBBB')
+            }
+        }
+changeButtonsState()
+        
+</script>

@@ -1,0 +1,28 @@
+<section class="section-spacing flex flex-col gap-18">
+<div style="text-align: center;">
+{% set data = {
+  heading: "The product we work with",
+  subheading: "Frybix delivered blazing fast performance, striking word solution"
+} %}
+{% include "headingandsub.njk" %}
+</div>
+<div class="flex flex-center gap-24 features">
+    <div class="flex flex-col flex-center gap-4">
+        <img width="80px" height="80px" src="../assets/core.svg" alt="core php feature ICON">
+        <h4>core PHP</h4>
+        <p>Create customized popups and show the right message at the </p>
+    </div>
+    <div class="separator"></div>
+        <div class="flex flex-col flex-center gap-4">
+        <img width="80px" height="80px" src="../assets/easy.svg" alt="easy feature ICON">
+        <h4 style="text-wrap: nowrap;">Easy customizable</h4>
+        <p>Create customized popups and show the right message at the </p>
+    </div>
+    <div class="separator"></div>
+        <div class="flex flex-col flex-center gap-4">
+        <img width="80px" height="80px" src="../assets/fast.svg" alt="fast feature icon">
+        <h4>fast support</h4>
+        <p>Create customized popups and show the right message at the </p>
+    </div>
+</div>
+</section>

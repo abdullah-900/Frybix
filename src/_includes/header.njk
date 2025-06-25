@@ -1,0 +1,55 @@
+<header class="section-spacing desktop-nav">
+    <nav class="nav flex">
+        <img src="../assets/Logo-black.svg" alt="Logo">
+        <ul class="flex gap-8">
+            <li>
+                <a href="#Home">Home</a>
+            </li>
+            <li>
+                <a href="About Us">About Us</a>
+            </li>
+            <li>
+                <a href="#Pricing">Pricing</a>
+            </li>
+            <li>
+                <a href="#Features">Features</a>
+            </li>
+        </ul> 
+        <button class="btn-primary">Download</button>
+    </nav>
+</header>
+
+
+<header class="section-spacing  mobile-nav">
+    <div class="nav flex">
+        <img src="../assets/Logo-black.svg" alt="Logo">
+        <img onclick="toggleMenu()" class="burger-icon" src="../assets/menu-burger.svg" alt="menu-burger">
+    </div>
+    <nav class="nav hidden menuControl  nav-mobile flex flex-col flex-center gap-8">
+            <ul class="flex flex-col flex-center gap-8">
+            <li>
+                <a href="#Home">Home</a>
+            </li>
+            <li>
+                <a href="About Us">About Us</a>
+            </li>
+            <li>
+                <a href="#Pricing">Pricing</a>
+            </li>
+            <li>
+                <a href="#Features">Features</a>
+            </li>
+        </ul> 
+        <button class="btn-primary">Download</button>
+    </nav>
+</header>
+
+
+<script>
+                function toggleMenu() {
+        const menuControl = document.querySelectorAll('.menuControl');
+        menuControl.forEach(menu => {
+            menu.classList.toggle('hidden');
+        });
+    }
+</script>
